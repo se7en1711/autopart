@@ -1,0 +1,428 @@
+/* ===== Reset y fondo general ===== */
+body {
+  margin: 0;
+  padding-top: 60px; /* Este valor debe coincidir con la altura del menú fijo */
+  overflow-x: hidden;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to right, #e6f0f3, #f4f6f9);
+}
+
+
+/* ===== Menú horizontal ===== */
+.menu-horizontal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #495525;
+  padding: 12px 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 999; /* Para que quede encima de todo */
+}
+
+
+.menu-horizontal ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: flex-start; /* Aquí se alinea a la izquierda */
+  padding-left: 40px; /* Espaciado desde el borde izquierdo */
+}
+
+.menu-horizontal ul li {
+  margin: 0 25px;
+}
+
+.menu-horizontal ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 17px;
+  font-weight: 500;
+  padding: 8px 15px;
+  border-radius: 6px;
+  transition: background 0.3s;
+}
+
+.menu-horizontal ul li a:hover {
+  background-color: #AED145;
+}
+
+
+/* ===== Encabezado principal ===== */
+.encabezado {
+  text-align: center;
+  padding: 40px 20px 10px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.encabezado h1 {
+  color: #1f4e79;
+  margin-bottom: 10px;
+}
+
+.encabezado p {
+  color: #4d6b8a;
+  font-size: 16px;
+}
+
+/* ===== Grid de productos ===== */
+.productos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 25px;
+  padding: 30px;
+  max-width: 1200px;
+  margin: auto;
+  align-items: stretch; /* Asegura igual altura en cada celda */
+}
+
+
+/* ===== Tarjeta de producto ===== */
+.producto {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%; /* Asegura altura uniforme */
+}
+
+
+.producto:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+
+.producto img {
+  width: 100%;
+  max-width: 150px;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.producto h3 {
+  margin: 10px 0;
+  color: #2c3e50;
+}
+
+.precio {
+  color: #27ae60;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* ===== Botón ===== */
+.producto button {
+  background-color: #495525;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.producto button:hover {
+  background-color: #AED145;
+}
+/* Ocultar por defecto */
+.oculto {
+  display: none !important;
+}
+
+/* SLIDER */
+.slider {
+  width: 100vw;
+  height: 400px;
+  overflow: hidden;
+  margin: 0 auto;
+  position: relative;
+}
+
+.slides {
+  display: flex;
+  width: 300vw;
+  height: 100%;
+  animation: slide 9s infinite;
+}
+
+.slides img {
+  width: 100vw;
+  height: 100%;
+  object-fit: cover; /* O usa contain si prefieres sin recorte */
+}
+
+/* Animación carrusel */
+@keyframes slide {
+  0% { transform: translateX(0vw); }
+  33% { transform: translateX(-100vw); }
+  66% { transform: translateX(-200vw); }
+  100% { transform: translateX(0vw); }
+}
+
+
+/* SECCIÓN BIENVENIDA */
+.bienvenida {
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.bienvenida h2 {
+  color: #495525;
+  margin-bottom: 10px;
+}
+
+.bienvenida p {
+  color: #333;
+  font-size: 16px;
+  line-height: 1.6;
+}
+/* CONTACTO EN DOS COLUMNAS */
+.contacto-grid {
+  display: flex;
+  width: 100%;
+  height: 500px;
+  max-width: 100%;
+  margin: 40px auto;
+  background-color: #fff;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.mapa {
+  width: 50%;
+  height: 100%;
+}
+
+.mapa iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.formulario-contacto {
+  width: 50%;
+  padding: 40px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.formulario-contacto h2 {
+  text-align: center;
+  color: #1f4e79;
+  margin-bottom: 20px;
+}
+
+.formulario-contacto form {
+  display: flex;
+  flex-direction: column;
+}
+
+.formulario-contacto label {
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #333;
+}
+
+.formulario-contacto input,
+.formulario-contacto textarea {
+  padding: 10px;
+  margin-bottom: 15px;
+  font-size: 15px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: 100%;
+}
+
+.formulario-contacto button {
+  background-color: #495525;
+  color: white;
+  padding: 12px;
+  border: none;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.formulario-contacto button:hover {
+  background-color: #AED145;
+}
+.equipo-seccion {
+  padding: 60px 20px;
+  background-color: #ffffff;
+  text-align: center;
+}
+
+.equipo-seccion h2 {
+  font-size: 28px;
+  color: #495525;
+  margin-bottom: 40px;
+}
+
+.equipo-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.equipo-card {
+  background: #f4f6f9;
+  border-radius: 12px;
+  padding: 20px;
+  width: 240px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.equipo-card:hover {
+  transform: translateY(-5px);
+}
+
+.equipo-card img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.equipo-card h3 {
+  margin: 10px 0 5px;
+  color: #495525;
+}
+
+.equipo-card p {
+  color: #555;
+  font-size: 14px;
+}
+.quienes-grid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  padding: 50px;
+  flex-wrap: wrap;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  max-width: 1100px;
+  margin: 40px auto;
+}
+
+.quienes-texto {
+  flex: 1;
+  min-width: 300px;
+}
+
+.quienes-texto h2 {
+  color: #495525;
+  font-size: 26px;
+  margin-bottom: 15px;
+}
+
+.quienes-texto p {
+  color: #444;
+  line-height: 1.6;
+}
+
+.quienes-imagen {
+  flex: 1;
+  min-width: 300px;
+}
+
+.quienes-imagen img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  object-fit: cover;
+}
+/* ===== SECCIÓN DE MARCAS ===== */
+.marcas-section {
+  background-color: #fff;
+  padding: 60px 20px;
+  text-align: center;
+  margin-top: 40px;
+}
+
+.marcas-section h2 {
+  font-size: 28px;
+  color: #495525;
+  margin-bottom: 40px;
+}
+
+.marcas-grid {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.marca {
+  width: 200px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.marca img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.marca img:hover {
+  transform: scale(1.05);
+}
+.seccion-doble {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  padding: 40px;
+  max-width: 1200px;
+  margin: 60px auto; /* ← Aquí está el espaciado entre secciones */
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+}
+
+
+.seccion-doble .izquierda,
+.seccion-doble .derecha {
+  flex: 1;
+  min-width: 300px;
+}
+
+.seccion-doble h2 {
+  color: #495525;
+  margin-bottom: 15px;
+}
+
+.seccion-doble p,
+.seccion-doble ul {
+  color: #333;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.seccion-doble ul {
+  list-style: disc inside;
+}
